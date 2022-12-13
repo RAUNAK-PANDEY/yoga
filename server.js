@@ -4,12 +4,12 @@ const app = express();
 const connectDB = require("./configuration/db");
 const errorHandler = require("./middleware/error");
 const path = require("path");
-
+var cors = require('cors')
 connectDB();
 
 
 app.use(express.json());
-
+app.use(cors({ origin : [ "http://localhost:3000" , "https://yogaclasses.onrender.com/"]}))
 app.get("/", (req, res, next) => {
   res.send("Api running");
 });
