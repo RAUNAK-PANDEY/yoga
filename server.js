@@ -1,15 +1,16 @@
 const express = require("express");
 require('dotenv').config({path: "./config.env"})
 const app = express();
-const connectDB = require("./configuration/db");
+const connectDB = require("./server/configuration/db");
 const errorHandler = require("./middleware/error");
 const path = require("path");
 var cors = require('cors')
 connectDB();
 
-
+app.use(express.static(path.join(process.cwd(), 'public')))
 app.use(express.json());
-app.use(cors({ origin : [ "http://localhost:3000" , "https://yogaclasses.onrender.com/"]}))
+app.use(express.urlencoded({ extended: false }))
+
 app.get("/", (req, res, next) => {
   res.send("Api running");
 });
@@ -26,12 +27,11 @@ const PORT = process.env.PORT || 5000;
 
  
 
-app.use(express.static(path.join(__dirname, 'build')));
+// app.use(express.static(path.join(__dirname, 'build')));
 
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'client', 'build','index.html'));
-});
-
+app.use(function (req, res, next) {
+  res.sendFile(path.join(process.cwd(), 'public', 'index.html'))
+})
 
 
 const server = app.listen(PORT, () =>
