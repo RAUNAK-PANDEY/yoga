@@ -35,22 +35,6 @@ CompletePayment() function.
 ## ER DIAGRAM
 ![ER DIAGRAM](https://user-images.githubusercontent.com/65064180/207200877-92968c81-e896-4116-abb0-3988624f745e.png)
 
-## DEPLOYMENT
-* HEROKU: I have done deployment mostly on Heroku but as Heroku is not free now and my GitHub Student Developer
-Pack Offer has not started so don't have access to the Heroku platform.
-
-* NETLIFY: It is used for hosting frontend only so I didn't use it.
-
-* RENDER: I tried deploying with this platform as it allows Full stack project deployment for free. Unfortunately, my frontend is not loading but my backend is working fine (I have tested using Postman). So, I have deployed the frontend separately but APIs are not working there.
-Also, my Mumbai University Semester-7th exam is going on and it will be up to 19th December so couldn't give much time on it.
-
-
-## NOTE : 
-* I couldn't try optional tasks because of lack of time as my exams are going on currently.
-
-## DEPLOYMENT LINKS :
-Backend : https://yoga-xrrk.onrender.com
-Frontend : https://yogaclasses.onrender.com/
 
 
 ## Screen shots 📸
